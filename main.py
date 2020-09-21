@@ -4,7 +4,7 @@ import pyautogui
 while True:
     screenshot = pyautogui.screenshot()
     screenshot = np.array(screenshot)
-    screenshot = screenshot[:, :, ::-1].copy()
+    screenshot = cv.cvtColor(screenshot, cv.COLOR_RGB2BGR)
     cv.imshow("Screen Shoot",screenshot)
     if cv.waitKey(1) == ord('q'):
         break
